@@ -1,16 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:project_review/config/bloc_wrapper.dart';
+import 'package:project_review/ui/root.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+import 'config/singleton.dart';
 
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(body: Text("project review"),),
-    );
-  }
+void main() async {
+  await singletonInit();
+  runApp(const BlocWrapper(child: RootPage()));
 }
 
