@@ -16,7 +16,7 @@ By example .env
 ```
 JWT='JFASDHUb32d38B'            # random string
 DB_USER=postgres                # postgres admin username
-DB_PASSWORD=yanachemto          # postgres admin password
+DB_PASSWORD=somepass          # postgres admin password
 DB_ADDRESS=127.0.0.1:5432       # postgres address 
 DB_NAME=reviewdb                # database name
 ```
