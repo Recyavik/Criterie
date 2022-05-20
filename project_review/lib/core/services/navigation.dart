@@ -5,7 +5,7 @@ class NavigationService {
   NavigatorState get navigator => navigatorKey.currentState!;
 
   Future showPopUpDialog(
-      AlertDialog dialog, {
+      Widget dialog, {
         bool barrierDismissible = true,
       }) async {
     final context = navigatorKey.currentState!.overlay!.context;

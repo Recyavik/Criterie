@@ -13,6 +13,7 @@ class RootPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  MaterialApp(
+      debugShowCheckedModeBanner: false,
       navigatorKey: singleton.get<NavigationService>().navigatorKey,
       home: BlocBuilder<AuthenticationCubit, AuthenticationState>(
           builder: (context, state){
