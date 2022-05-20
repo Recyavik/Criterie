@@ -12,26 +12,26 @@ class RootPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       navigatorKey: singleton.get<NavigationService>().navigatorKey,
       home: BlocBuilder<AuthenticationCubit, AuthenticationState>(
-          builder: (context, state){
-            if(state is AuthenticationInitial){
-              context.read<AuthenticationCubit>().getUser();
-              return const SplashPage();
-            }
-            if(state is AuthenticationLoading){
-              return const SplashPage();
-            }
-            if(state is NotAuthenticated){
-              return const AuthPage();
-            }
-            if(state is AuthenticatedState){
-              return const ProfilePage();
-            }
-            throw("Undefined state");
-          },
+        builder: (context, state) {
+          if (state is AuthenticationInitial) {
+            context.read<AuthenticationCubit>().getUser();
+            return const SplashPage();
+          }
+          if (state is AuthenticationLoading) {
+            return const SplashPage();
+          }
+          if (state is NotAuthenticated) {
+            return const AuthPage();
+          }
+          if (state is AuthenticatedState) {
+            return const ProfilePage();
+          }
+          throw ("Undefined state");
+        },
       ),
     );
   }

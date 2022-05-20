@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:project_review/core/logic/project/bloc.dart';
 import 'package:project_review/core/logic/project/repository.dart';
-import 'package:project_review/ui/user/criteria_manager/manager.dart';
+import 'package:project_review/ui/user/criteria_manager/components/criteria_group.dart';
 
 class ReviewPage extends StatelessWidget {
   const ReviewPage({Key? key}) : super(key: key);
@@ -18,9 +18,13 @@ class ReviewPage extends StatelessWidget {
     return list;
   }
 
-  double calcTotal(BuildContext context){
+  double calcTotal(BuildContext context) {
     double total = 0;
-    context.read<ProjectBloc>().repository.selected.criteria.forEach((element) { for (var element in element.criterion) { if(element.isSelected)total+=element.coast;}});
+    context.read<ProjectBloc>().repository.selected.criteria.forEach((element) {
+      for (var element in element.criterion) {
+        if (element.isSelected) total += element.coast;
+      }
+    });
     return total;
   }
 

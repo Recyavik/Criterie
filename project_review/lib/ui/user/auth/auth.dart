@@ -73,13 +73,10 @@ class _AuthHeader extends StatelessWidget {
       child: Flex(
         direction: Axis.vertical,
         children: const [
-          Flexible(
-              fit: FlexFit.tight,
-              child: Placeholder()),
+          Flexible(fit: FlexFit.tight, child: Placeholder()),
           Text("Project review application")
         ],
       ),
     );
   }
 }
-

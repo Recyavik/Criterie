@@ -17,7 +17,7 @@ class _CreateGroupDialogState extends State<CreateGroupDialog> {
   late TextEditingController controller;
 
   @override
-  initState(){
+  initState() {
     controller = TextEditingController();
     super.initState();
   }
@@ -27,14 +27,18 @@ class _CreateGroupDialogState extends State<CreateGroupDialog> {
     return AlertDialog(
       title: const Text("Новая группа критериев"),
       actions: [
-        TextButton(onPressed: (){
-          singleton.get<NavigationService>().navigator.pop();
-        }, child: const Text("Отмена")),
-        ElevatedButton(onPressed: (){
-          context.read<ProjectBloc>().add(AddCriteriaGroupEvent(CriteriaGroupData(
-            0, const Uuid().v4(), controller.text, []
-          )));
-        }, child: const Text("Добавить"))
+        TextButton(
+            onPressed: () {
+              singleton.get<NavigationService>().navigator.pop();
+            },
+            child: const Text("Отмена")),
+        ElevatedButton(
+            onPressed: () {
+              context.read<ProjectBloc>().add(AddCriteriaGroupEvent(
+                  CriteriaGroupData(
+                      0, const Uuid().v4(), controller.text, [])));
+            },
+            child: const Text("Добавить"))
       ],
       content: Container(
         constraints: const BoxConstraints(maxHeight: 80),
@@ -44,9 +48,7 @@ class _CreateGroupDialogState extends State<CreateGroupDialog> {
           children: [
             TextField(
               controller: controller,
-              decoration: const InputDecoration(
-                label: Text("Название группы")
-              ),
+              decoration: const InputDecoration(label: Text("Название группы")),
             )
           ],
         ),
