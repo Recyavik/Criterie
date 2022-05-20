@@ -4,12 +4,16 @@ Project review app
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Requirements:
+- flutter 3.0 or high
 
-A few resources to get you started if this is your first Flutter project:
+### Run project
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+`flutter run -d {target platform}`
+
+### Rebuild auto-generated code
+
+`flutter pub run build_runner build --delete-conflicting-outputs`
 
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
